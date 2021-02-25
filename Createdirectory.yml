@@ -1,0 +1,13 @@
+---
+- hosts: tomcat
+  vars:
+    a: ec2-user
+  tasks:
+   - name: running date
+     shell: date
+   - name: create folder
+     file:
+       path: /tmp/balaji
+       state: directory
+  
+
