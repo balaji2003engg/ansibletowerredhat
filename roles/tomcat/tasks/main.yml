@@ -1,0 +1,3 @@
+---
+- name: stop tomcat
+  shell: systemctl stop tomcat
