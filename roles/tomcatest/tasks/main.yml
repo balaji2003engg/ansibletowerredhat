@@ -7,7 +7,7 @@
   get_url:
      url: "https://chbalaji080186.jfrog.io/artifactory/libs-snapshot-local/application1/application1-1.0.22.war"
      dest: /tmp/
-     username: "balaji2003engg@gmail.com"
+     username: "chbalaji080186@gmail.com"
      password: "Ch683212@"
      
 - name : copy the war to the webapps folder
