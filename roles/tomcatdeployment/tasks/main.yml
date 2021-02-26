@@ -2,7 +2,7 @@
 # tasks file for tomcatdeployment
 - name: Get the war to the temp location
   get_url:
-    url: {{jfrogurl}}/artifactory/{{jfrogrepo}}/{{project}}/{{project}}-1.0.22.war
+    url: "{{jfrogurl}}/artifactory/{{jfrogrepo}}/{{project}}/{{project}}-1.0.22.war"
     dest: /tmp/
     username: {{jfrogusername}}
     password: {{jfrogpassword}}
