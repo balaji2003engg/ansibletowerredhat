@@ -2,3 +2,6 @@
 # vars file for tomcatdeployment
 jfrogusername: chbalaji080186@gmail.com
 jfrogpassword: Ch683212@
+jfrogurl: https://chbalaji080186.jfrog.io
+jfrogrepo: libs-snapshot-local
+project: application1
