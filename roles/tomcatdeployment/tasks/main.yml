@@ -2,7 +2,7 @@
 # tasks file for tomcatdeployment
 - name: Get the war to the temp location
   get_url:
-    url: https://chbalaji080186.jfrog.io/artifactory/libs-snapshot-local/application1/application1-1.0.22.war
+    url: {{jfrogurl}}/artifactory/{{jfrogrepo}}/{{project}}/{{project}}-1.0.22.war
     dest: /tmp/
     username: {{jfrogusername}}
     password: {{jfrogpassword}}
@@ -12,8 +12,8 @@
   
 - name: copy the war file to the webapps folder
   copy:
-    src: /tmp/application1-1.0.22.war
-    dest: /opt/tomcat/webapps/application1.war
+    src: /tmp/{{project}}-1.0.22.war
+    dest: /opt/tomcat/webapps/{{project}}.war
     remote_src: yes
     
 - name: start the tomcat
