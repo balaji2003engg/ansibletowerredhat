@@ -1,2 +1,20 @@
 ---
 # tasks file for tomcatdeployment
+- name: Get the war to the temp location
+  get_url:
+    url: https://chbalaji080186.jfrog.io/artifactory/libs-snapshot-local/application1/application1-1.0.22.war
+    dest: /tmp/
+    username: chbalaji080186@gmail.com
+    password: Ch683212@
+    
+- name: stop the tomcat
+  shell: systemctl stop tomcat
+  
+- name: copy the war file to the webapps folder
+  copy:
+    src: /tmp/application1-1.0.22.war
+    dest: /opt/tomcat/webapps/application1.war
+    remote_src: yes
+    
+- name: start the tomcat
+  shell: systemctl start tomcat
