@@ -4,8 +4,8 @@
   get_url:
     url: "{{jfrogurl}}/artifactory/{{jfrogrepo}}/{{project}}/{{project}}-1.0.22.war"
     dest: /tmp/
-    username: {{jfrogusername}}
-    password: {{jfrogpassword}}
+    username: "{{jfrogusername}}"
+    password: "{{jfrogpassword}}"
     
 - name: stop the tomcat
   shell: systemctl stop tomcat
