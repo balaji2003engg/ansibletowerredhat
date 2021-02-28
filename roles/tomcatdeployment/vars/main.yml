@@ -3,6 +3,9 @@
 jfrogusername: chbalaji080186@gmail.com
 jfrogpassword: Ch683212@
 jfrogurl: https://chbalaji080186.jfrog.io
-jfrogrepo: libs-snapshot-local
+jfrogrepo:
+  dev: libs-snapshot-local
+  qa: libs-release-local
+  prod: libs-release-lcoal
 project: application1
 version: 1.0.20
