@@ -1,3 +1,5 @@
  
 - name : start
-  shell: "systemctl start tomcat"
+  file:
+    path: /tmp/handlers
+    state: directory
