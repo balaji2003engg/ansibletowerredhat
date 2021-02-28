@@ -1,3 +1,5 @@
 ---
-- name: stop tomcat
+- name: handlers
   shell: systemctl stop tomcat
+  notify: 
+   - start
