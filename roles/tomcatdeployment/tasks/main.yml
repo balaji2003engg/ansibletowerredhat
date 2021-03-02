@@ -16,5 +16,11 @@
     dest: /opt/tomcat/webapps/{{project}}.war
     remote_src: yes
     
+- name: copy the tomcat service file
+  template:
+    src: "roles/tomcatdeployment/templates/tomcat.service.j2"
+    dest: /etc/systemd/system/tomcat.service
+    remote_src: yes
+    
 - name: start the tomcat
   shell: systemctl start tomcat
