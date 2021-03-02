@@ -20,6 +20,7 @@
   template:
     src: tomcat.service.j2
     dest: /etc/systemd/system/tomcat.service
+    template_path: roles/tomcatdeployment/templates
     remote_src: yes
     
 - name: start the tomcat
