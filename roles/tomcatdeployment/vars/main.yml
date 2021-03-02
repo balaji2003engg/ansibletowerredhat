@@ -9,3 +9,4 @@ jfrogrepo:
   prod: libs-release-lcoal
 project: application1
 version: 1.0.20
+tomcatdir: /opt/tomcat
