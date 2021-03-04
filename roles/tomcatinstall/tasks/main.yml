@@ -25,3 +25,23 @@
 - name: create the tomcat user and add it to tomcat group
   user: name=tomcat group=tomcat state=present shell=/bin/bash home=/home/tomcat createhome=yes
   
+- name: change the permissions
+  shell: "chmod -R 755 /opt/tomcat/"
+  
+- name: change the ownership
+  shell: "chown -R tomcat:tomcat /opt/tomcat"
+  
+  
+- name: tomcat service file
+  get_url:
+    url: https://devops2020.s3.amazonaws.com/tomcat.service.j2
+    dest: /etc/systemd/system/tomcat.servcie
+    
+- name: enable the service
+  shell: "systemctl enable tomcat"
+    
+- name: daemon reload
+  shell: "systemctl daemon-reload"
+  
+- name: start the tomcat
+  shell: "systemctl start tomcat"
