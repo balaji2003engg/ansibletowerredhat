@@ -1,0 +1,27 @@
+---
+- name: install java
+  yum:
+   name: 
+    - java-1.8.0-openjdk
+    - java-1.8.0-openjdk-devel
+   state: present
+   
+- name: download the tomcat war file
+  get_url:
+   url: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz
+   dest: /opt/
+   
+- name: create the tomcat directory
+  file:
+    path: /opt/tomcat
+    state: directory
+    
+- name: untar the tomcat
+  shell: tar xzvf apache-tomcat-8.5.61.tar.gz -C /opt/tomcat/ --strip-components=1
+  
+- name: create the tomcat group
+  group: name=tomcat state=present
+  
+- name: create the tomcat user and add it to tomcat group
+  user: name=tomcat group=tomcat state=present shell=/bin/bash home=/home/tomcat createhome=yes
+  
