@@ -35,7 +35,7 @@
 - name: tomcat service file
   get_url:
     url: https://devops2020.s3.amazonaws.com/tomcat.service.j2
-    dest: /etc/systemd/system/tomcat.servcie
+    dest: /etc/systemd/system/tomcat.service
     
 - name: enable the service
   shell: "systemctl enable tomcat"
